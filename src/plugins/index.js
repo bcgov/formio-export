@@ -1,6 +1,6 @@
 import toHtml from './html';
 import toPdf from './pdf';
-import toXlsx from './xlsx';
+import toXlsx from '../../xlsx';
 
 export {
   toHtml,

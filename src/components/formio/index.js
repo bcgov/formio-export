@@ -1,38 +1,38 @@
-import TextFieldComponent from './textfield';
-import TextAreaComponent from './textarea';
-import EmailComponent from './email';
-import PasswordComponent from './password';
-import PhoneNumberComponent from './phonenumber';
+import TextFieldComponent from "./textfield"
+import TextAreaComponent from "./textarea"
+import EmailComponent from "./email"
+import PasswordComponent from "./password"
+import PhoneNumberComponent from "./phonenumber"
 
-import NumberComponent from './number';
-import CurrencyComponent from './currency';
+import NumberComponent from "./number"
+import CurrencyComponent from "./currency"
 
-import DateTimeComponent from './datetime';
-import DayComponent from './day';
-import TimeComponent from './time';
-import AddressComponent from './address';
+import DateTimeComponent from "./datetime"
+import DayComponent from "./day"
+import TimeComponent from "./time"
+import AddressComponent from "./address"
 
-import CheckBoxComponent from './checkbox';
-import RadioComponent from './radio';
-import SelectBoxesComponent from './selectboxes';
-import SelectComponent from './select';
-import ResourceComponent from './resource';
+import CheckBoxComponent from "./checkbox"
+import RadioComponent from "./radio"
+import SelectBoxesComponent from "./selectboxes"
+import SelectComponent from "./select"
+import ResourceComponent from "./resource"
 
-import SurveyComponent from './survey';
-import FileComponent from './file';
-import SignatureComponent from './signature';
+import SurveyComponent from "./survey"
+import FileComponent from "./file"
+import SignatureComponent from "./signature"
 
-import ContainerComponent from './container';
-import DataGridComponent from './datagrid';
-import EditGridComponent from './editgrid';
+import ContainerComponent from "./container"
+import DataGridComponent from "./datagrid"
+import EditGridComponent from "./editgrid"
 
-import FormComponent from './form';
+import FormComponent from "./form"
 
-import ColumnsComponent from './columns';
-import PanelComponent from './panel';
-import FieldSetComponent from './fieldset';
+import ColumnsComponent from "./columns"
+import PanelComponent from "./panel"
+import FieldSetComponent from "./fieldset"
 
-import UnknownComponent from './unknown';
+import UnknownComponent from "./unknown"
 
 const FormioComponent = {
   textfield: TextFieldComponent,
@@ -62,18 +62,21 @@ const FormioComponent = {
   fieldset: FieldSetComponent,
   unknown: UnknownComponent,
   form: FormComponent,
+
+  simpletextfield: TextFieldComponent,
+
   create: (component, data, options) => {
-    let c = null;
+    let c = null
 
     if (!component) {
-      return null;
+      return null
     } else if (FormioComponent.hasOwnProperty(component.type)) {
-      c = new FormioComponent[component.type](component, data, options);
+      c = new FormioComponent[component.type](component, data, options)
     } else {
-      c = new UnknownComponent(component, data, options);
+      c = new UnknownComponent(component, data, options)
     }
-    return c;
-  }
-};
+    return c
+  },
+}
 
-export default FormioComponent;
+export default FormioComponent
