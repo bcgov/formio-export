@@ -67,7 +67,7 @@ const FormioComponent = {
 
   create: (component, data, options) => {
     let c = null
-
+    debugger
     if (!component) {
       return null
     } else if (FormioComponent.hasOwnProperty(component.type)) {
